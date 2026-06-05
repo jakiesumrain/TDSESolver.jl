@@ -1,0 +1,28 @@
+# Intensity Scan Example
+# Systematically varies laser intensity to explore ionization regime
+
+[atom]
+type = "hydrogen"
+
+[laser]
+wavelength = 800.0        # nm (fixed)
+intensity = 1.0e14        # W/cm² (BASE VALUE - will be scanned)
+pulse_duration = 10.0     # fs (fixed)
+polarization = [0.0, 0.0, 1.0]  # z-polarized
+
+[calculation]
+type = "ionization"
+output_file = "intensity_scan_results.h5"
+verbosity = "normal"
+
+[numerical]
+nrmax = 100
+rmax = 100.0
+lmax = 2
+dt = 0.1
+t_total = 20.0
+
+[scan]
+# Scan over laser intensity from 1e13 to 1e15 W/cm² in 5 steps
+parameter = "laser_intensity"
+range = "1.0e13:2.0e13:1.0e15"  # start:step:stop format

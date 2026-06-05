@@ -1,0 +1,35 @@
+# Soft-Core Potential Example
+# Demonstrates custom potential specification for TDSE calculations
+
+[atom]
+type = "custom"
+potential = "-1/sqrt(r^2 + 0.5)"  # Soft-core potential with regularization parameter a=0.5
+charge = 1.0
+
+[laser]
+wavelength = 800.0        # nm
+intensity = 5.0e14        # W/cm² (strong field for ionization)
+pulse_duration = 10.0     # fs
+polarization = [0.0, 0.0, 1.0]  # z-polarized
+
+[calculation]
+type = "ionization"
+output_file = "soft_core_results.h5"
+verbosity = "normal"
+
+[numerical]
+# Optional: Override default grid parameters
+# nrmax = 200
+# rmax = 100.0
+# lmax = 2
+# dt = 0.1
+# t_total = 100.0
+
+# Optional: Enable momentum analysis
+# enable_momentum_analysis = true
+# p_max = 2.0
+# n_p = 30
+
+# Optional: Enable HHG calculation
+# enable_hhg = false
+# hhg_method = "acceleration"  # or "length", "eigenstate"

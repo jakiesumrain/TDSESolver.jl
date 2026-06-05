@@ -1,0 +1,36 @@
+# Julia
+Manifest.toml
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+deps/deps.jl
+deps/build.log
+deps/downloads/
+*.ji
+.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Build artifacts
+build/
+docs/build/
+docs/site/
+
+# Environment
+.env
+.env.*
+*.log
+
+# Test outputs
+*.h5
+*.hdf5
+tests/tmp/

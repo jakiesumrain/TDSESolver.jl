@@ -1,0 +1,34 @@
+# Example Configuration: Helium Ionization at 800 nm
+
+# Atom configuration
+[atom]
+type = "helium"  # Built-in: hydrogen, helium, argon, neon, xenon
+
+# Laser parameters
+[laser]
+wavelength = 800.0        # nm
+intensity = 5e14          # W/cm²
+pulse_duration = 10.0     # fs (FWHM)
+polarization = [1.0, 0.0, 0.0]  # Linear polarization along x
+
+# Calculation settings
+[calculation]
+type = "ionization"       # or "hhg"
+output_file = "helium_800nm_results.h5"
+log_file = "helium_800nm_progress.log"  # Optional
+verbosity = "normal"      # minimal | normal | verbose
+
+# Optional: Numerical parameter overrides for advanced users
+#[numerical]
+#nrmax = 500              # Override automatic radial grid size
+#lmax = 120               # Override automatic angular momentum cutoff
+#time_step = 0.05         # Override automatic time step (a.u.)
+
+# Optional: Parameter scan
+#[scan]
+#parameter = "laser.intensity"
+#range = "1e14:1e14:1e15"  # start:step:stop (10 points)
+
+# For 2D parameter scan:
+#parameters = ["laser.intensity", "laser.wavelength"]
+#ranges = ["1e14:5e13:5e14", "400:200:1200"]
