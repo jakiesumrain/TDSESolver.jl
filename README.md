@@ -114,7 +114,7 @@ If you use TDSESolver.jl in your research, please cite:
 
 ## License
 
-MIT License
+GNU General Public License v3.0
 
 ## Acknowledgments
 
